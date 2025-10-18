@@ -1,0 +1,35 @@
+design patterns in c++
+======================
+
+Implementation of common design patterns in C++, useful
+reference for many projects.
+
+DONE
+----
+
+- Abstract factory
+- Builder
+- Factory method
+- Prototype
+- Singleton
+
+TODO
+----
+
+- Adapter
+- Bridge
+- Composite
+- Decorator
+- Facade
+- Flyweight
+- Proxy
+- Chain of responsibility
+- Command
+- Iterator
+- Mediator
+- Memento
+- Observer
+- State
+- Strategy
+- Template method
+- Visitor
