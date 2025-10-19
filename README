@@ -13,11 +13,11 @@ DONE
 - Prototype
 - Singleton
 - Adapter
+- Bridge
 
 TODO
 ----
 
-- Bridge
 - Composite
 - Decorator
 - Facade

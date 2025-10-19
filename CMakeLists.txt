@@ -53,32 +53,22 @@ message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 # Targets
 #
 
-# Abstract factory
-add_executable(abstract-factory abstract-factory.cpp)
-target_compile_definitions(abstract-factory PRIVATE ${DEBUG_DEFINES})
-target_compile_options(abstract-factory
-  PRIVATE ${DEBUG_FLAGS} ${WARNING_FLAGS})
-if(NOT MSVC)
-  target_link_options(abstract-factory PRIVATE ${DEBUG_LINK_FLAGS})
-endif()
+function (register_target TARGET_NAME TARGET_SOURCE)
+  add_executable(${TARGET_NAME} ${TARGET_SOURCE})
+  target_compile_definitions(${TARGET_NAME} PRIVATE ${DEBUG_DEFINES})
+  target_compile_options(${TARGET_NAME}
+    PRIVATE ${DEBUG_FLAGS} ${WARNING_FLAGS})
+  if(NOT MSVC)
+    target_link_options(${TARGET_NAME} PRIVATE ${DEBUG_LINK_FLAGS})
+  endif()
+endfunction()
 
-# Builder
-add_executable(builder builder.cpp)
-target_compile_definitions(builder PRIVATE ${DEBUG_DEFINES})
-target_compile_options(builder
-  PRIVATE ${DEBUG_FLAGS} ${WARNING_FLAGS})
-if(NOT MSVC)
-  target_link_options(builder PRIVATE ${DEBUG_LINK_FLAGS})
-endif()
-
-# Factory method
-add_executable(factory-method factory-method.cpp)
-target_compile_definitions(factory-method PRIVATE ${DEBUG_DEFINES})
-target_compile_options(factory-method
-  PRIVATE ${DEBUG_FLAGS} ${WARNING_FLAGS})
-if(NOT MSVC)
-  target_link_options(factory-method PRIVATE ${DEBUG_LINK_FLAGS})
-endif()
+register_target(abstract-factory abstract-factory.cpp)
+register_target(builder builder.cpp)
+register_target(factory-method factory-method.cpp)
+register_target(singleton singleton.cpp)
+register_target(adapter adapter.cpp)
+register_target(bridge bridge.cpp)
 
 # Prototype
 add_executable(prototype prototype.cpp)
@@ -89,24 +79,6 @@ if(NOT MSVC)
   target_link_options(prototype PRIVATE ${DEBUG_LINK_FLAGS})
 endif()
 set_property(TARGET prototype PROPERTY CXX_STANDARD 20)
-
-# Singleton
-add_executable(singleton singleton.cpp)
-target_compile_definitions(singleton PRIVATE ${DEBUG_DEFINES})
-target_compile_options(singleton
-  PRIVATE ${DEBUG_FLAGS} ${WARNING_FLAGS})
-if(NOT MSVC)
-  target_link_options(singleton PRIVATE ${DEBUG_LINK_FLAGS})
-endif()
-
-# Adapter
-add_executable(adapter adapter.cpp)
-target_compile_definitions(adapter PRIVATE ${DEBUG_DEFINES})
-target_compile_options(adapter
-  PRIVATE ${DEBUG_FLAGS} ${WARNING_FLAGS})
-if(NOT MSVC)
-  target_link_options(adapter PRIVATE ${DEBUG_LINK_FLAGS})
-endif()
 
 #
 # End of CMakeLists.txt
