@@ -12,11 +12,11 @@ DONE
 - Factory method
 - Prototype
 - Singleton
+- Adapter
 
 TODO
 ----
 
-- Adapter
 - Bridge
 - Composite
 - Decorator

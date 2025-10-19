@@ -99,6 +99,14 @@ if(NOT MSVC)
   target_link_options(singleton PRIVATE ${DEBUG_LINK_FLAGS})
 endif()
 
+# Adapter
+add_executable(adapter adapter.cpp)
+target_compile_definitions(adapter PRIVATE ${DEBUG_DEFINES})
+target_compile_options(adapter
+  PRIVATE ${DEBUG_FLAGS} ${WARNING_FLAGS})
+if(NOT MSVC)
+  target_link_options(adapter PRIVATE ${DEBUG_LINK_FLAGS})
+endif()
 
 #
 # End of CMakeLists.txt
