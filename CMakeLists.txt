@@ -75,6 +75,7 @@ register_target(factory-method factory-method.cpp)
 register_target(singleton singleton.cpp)
 register_target(adapter adapter.cpp)
 register_target(bridge bridge.cpp)
+register_target(composite composite.cpp)
 
 # Prototype
 add_executable(prototype prototype.cpp)

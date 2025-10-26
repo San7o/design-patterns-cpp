@@ -14,11 +14,11 @@ DONE
 - Singleton
 - Adapter
 - Bridge
+- Composite
 
 TODO
 ----
 
-- Composite
 - Decorator
 - Facade
 - Flyweight
